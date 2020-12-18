@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  uro_pred_backend:
+    container_name: uro_pred_backend
+    restart: always
+    build: ./uro_pred_backend
+    ports:
+      - "4000:4000"
+    command: gunicorn -w 1 -b 0.0.0.0:4000 wsgi:server
+
+  nginx:
+    container_name: nginx
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - uro_pred_backend
+
+  uro_pred_frontend:
+    container_name: uro_pred_frontend
+    restart: always
+    build: ./uro_pred_frontend
+    ports:
+      -  "8050:8050"
+    depends_on:
+      - nginx
+    command: gunicorn -w 1 -b 0.0.0.0:8050 wsgi:server

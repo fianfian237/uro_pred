@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "cloning uro_pred_backend repos from github"
+git clone git@github.com:fianfian237/uro_pred_backend.git uro_pred_backend
+
+echo "cloning uro_pred_frontend repos from github"
+git clone git@github.com:fianfian237/uro_pred_frontend.git uro_pred_backend
+
+echo "killing old docker processes"
+docker-compose rm -fs
+
+echo "building docker containers"
+docker-compose up --build -d
