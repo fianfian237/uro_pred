@@ -5,9 +5,10 @@ services:
     container_name: uro_pred_backend
     restart: always
     build: ./uro_pred_backend
+    volumes: ['./uro_pred_backend:/usr/src/app']
     ports:
       - "4000:4000"
-    command: gunicorn -w 1 -b 0.0.0.0:4000 wsgi:server
+    command: gunicorn -w 1 -b 0.0.0.0:4000 wsgi:app
 
   nginx:
     container_name: nginx
@@ -22,8 +23,9 @@ services:
     container_name: uro_pred_frontend
     restart: always
     build: ./uro_pred_frontend
+    volumes: ['./uro_pred_frontend:/usr/src/app']
     ports:
       -  "8050:8050"
     depends_on:
       - nginx
-    command: gunicorn -w 1 -b 0.0.0.0:8050 wsgi:server
+    command: gunicorn -w 1 -b 0.0.0.0:8050 app:server
