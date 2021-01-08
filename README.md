@@ -9,5 +9,5 @@ Ce dépôt permet donc de déployer une appli en local pour obtenir les résulta
 Pour l'installer et tester, il faut :
 * d'abord avoir au préalable docker, docker-compose et git sur sa machine
 * ensuite cloner le repo
-* enfin exécuter le scipt shell - il conera les repos correspondant au frontend et backend, en fera des containers docker et installera les dépendances
+* enfin exécuter le scipt shell - il clonera les repos correspondant au frontend et backend, en fera des containers docker et installera les dépendances
 * Une fois l'installation terminée, il suffira de se rendre à l'adresse localhost:8050 dans son navigateur
