@@ -11,3 +11,5 @@ Pour l'installer et tester, il faut :
 * ensuite cloner le repo
 * enfin exécuter le scipt shell - il clonera les repos correspondant au frontend et backend, en fera des containers docker et installera les dépendances
 * Une fois l'installation terminée, il suffira de se rendre à l'adresse localhost:8050 dans son navigateur
+
+Il est aussi possible de consulter directement une version de la webapp publiée à l'adresse suivante http://preduro.herokuapp.com sur le cloud.
